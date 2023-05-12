@@ -1,0 +1,86 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
+    <title>Document</title>
+    <style>
+        body{
+            background: linear-gradient(45deg,rgb(2, 51, 60),rgb(74, 25, 82));
+        }
+        .box{
+            /* background-color: aqua; */
+            background: linear-gradient(45deg,rgb(3, 20, 71),rgb(86, 37, 99));
+            border-left: 4px solid whitesmoke;
+            border-right: 4px solid whitesmoke;
+            height: auto;
+            width: 50%;
+            padding: 20px;
+            border-radius: 10px;
+            margin:1px auto;
+        }
+        h1{
+         /* color: whitesmoke; */
+         background: linear-gradient(45deg,rgb(220, 126, 184),rgb(10, 137, 105));
+         -webkit-text-fill-color: transparent;
+         -webkit-background-clip: text;
+        }
+        .element{
+            /* background-color: bisque; */
+            background: linear-gradient(180deg,transparent,rgb(108, 160, 202));
+            border: 2px soild black;
+            border-radius: 20px;
+            width: 80%;
+            height: auto;
+            margin:20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        img{
+            width: auto;
+            height:30vh;
+        }
+        .nav{
+            width: 100vw;
+            height: 10vh;
+            background-color: blue;
+            margin-bottom: 10px;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blog .html</h1>
+    <div class="nav"> <h1>Navbar </h1></div>
+<div class="box">
+    {% if content %}
+    {% for i in content%}
+    <div class="element">
+        <h1>Blog {{i.title}}</h1>
+
+        <img  src="{{i.post_images.url}}" alt="">
+        <div>
+            
+    
+    <li><span>Slug :</span> {{i.slug}}</li>
+    <h3>Author :{{i.author}}</h3>
+    <div style="width: auto;">
+        <h4>Last update_on :{{i.update_on}}</h4>
+   <h4> Created on :{{i.created_on}}</h4>
+    </div>
+    <h3>{{i.content}}</h3>
+    <li><span>Status :</span> {{i.status}}</li>
+        </div>
+    
+    
+    </div>
+    {% endfor%}
+    {% endif%}
+</div>
+</body>
+</html>

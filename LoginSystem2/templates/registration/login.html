@@ -1,0 +1,25 @@
+<style>
+#login{
+    background-color: pink;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 60vh;
+    flex-direction: column;
+}
+input{
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+</style>
+<div id="login">
+    <h1> Log In</h1>
+<form id="login" action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button style=" padding: 20px;background-color: whitesmoke; border-radius: 20px;" type="submit">Log In</button>
+</form>
+<a href="{% url 'signup' %}" style=" padding: 20px;background-color: whitesmoke; border-radius: 20px;">Signup </a>
+
+</div>
