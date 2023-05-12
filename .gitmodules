@@ -1,0 +1,9 @@
+[submodule "Email"]
+	path = Email
+	url = git@github.com:rohitramteke1/django.git
+[submodule ".\\NEWS-Django-App\\"]
+	path = .\\NEWS-Django-App\\
+	url = git@github.com:rohitramteke1/django.git
+[submodule ".\\Weather-Showing-App\\"]
+	path = .\\Weather-Showing-App\\
+	url = git@github.com:rohitramteke1/django.git
